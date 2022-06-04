@@ -1,0 +1,59 @@
+﻿@model MyDocument4.Domain.User
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="page-wrapper">
+    <section class="registration-section">
+        <div class="registration-form-wrapper">
+            <div class="registration-form-image-wrapper">
+                <img class="registration-form-image" id="planet-img" src="./Assets/PassportEarth.png" alt="planet-img">
+            </div>
+
+            <div class="form-card flex-column">
+                <div class="form-wrapper">
+
+                    <h2 class="form-title">
+                        Міжпланетна черга для
+                        <span id="text-to-change"> отримання паспорту</span>
+                    </h2>
+
+                    <form class="registration-form flex-column" asp-controller="Home" asp-action="Index" method="post">
+
+                        <input type="hidden" asp-for="Id" />
+                        <div asp-validation-summary="All"></div>
+
+
+                        <label class="form-label" asp-for="Name" for="name">Імʼя</label>
+                        <input class="form-input" type="text" asp-for="Name" id="name" name="name" placeholder="Введіть імʼя" required>
+                        <span asp-validation-for="Name"></span>
+
+                        <label class="form-label" asp-for="Phone" for="phone" required>Телефон</label>
+                        <input class="form-input" type="tel" asp-for="Phone" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="+38 (_) __ __ __" required>
+                        <span asp-validation-for="Phone"></span>
+
+                        <label class="form-label" asp-for="Planet" for="select">Планета</label>
+                        <select class="form-input form-input-select" asp-for="Planet" name="planet" id="select" required>
+                            <option value="mercury">Паспорт Меркурія</option>
+                            <option value="venus">Паспорт Венери</option>
+                            <option value="earth" selected>Паспорт Землі</option>
+                            <option value="mars">Паспорт Марса</option>
+                            <option value="saturn">Паспорт Сатурна</option>
+                            <option value="jupiter">Паспорт Юпітера</option>
+                            <option value="uranus">Паспорт Урана</option>
+                            <option value="neptune">Паспорт Нептуна</option>
+                        </select>
+                        <span asp-validation-for="Planet"></span>
+
+
+
+                        <button id="submit" class="form-submit-button" type="submit">Зареєструватися</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

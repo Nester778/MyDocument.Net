@@ -1,0 +1,29 @@
+﻿@using MyDocument4.Domain
+@model MyDocument4.Domain.User
+@{
+    ViewData["Title"] = "Submit Page";
+}
+
+<div class="page-wrapper">
+    <section class="registration-section">
+        <div class="registration-form-wrapper">
+
+            <div class="form-card flex-column">
+                <div class="form-wrapper">
+
+
+                    <h2 class="form-title">
+                        Ви успішно
+                        <span id="text-to-change">Зареєструвалися</span>
+                    </h2>
+
+                    <p class="form-card-text">Місце в черзі: @Model.Number</p>
+                    <p class="form-card-text">Ім'я: @Model.Name</p>
+                    <p class="form-card-text">Телефон: @Model.Phone</p>
+                    <p class="form-card-text">Планета: @Model.Planet</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
